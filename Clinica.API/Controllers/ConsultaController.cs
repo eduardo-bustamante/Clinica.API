@@ -23,7 +23,7 @@ namespace Clinica.API.Controllers
         [HttpGet("Buscar Consulta")]
         public async Task<IActionResult> Get(int id)
         {
-            var consulta = await _context.Consultas.FirstOrDefaultAsync(x => x.ID == id);
+            var consulta = await _context.Consultas.FirstOrDefaultAsync(x => x.Id == id);
             return Ok(consulta);
         }
 

@@ -29,7 +29,7 @@ namespace Clinica.API.Controllers
         [HttpGet("Buscar Médicos")]
         public async Task<IActionResult> Get(int id)
         {
-            var medicos = await _context.Medicos.FirstOrDefaultAsync(x => x.ID == id);
+            var medicos = await _context.Medicos.FirstOrDefaultAsync(x => x.Id == id);
             return Ok(medicos);
         }
 
@@ -45,7 +45,7 @@ namespace Clinica.API.Controllers
         [HttpPut("Editar Registro   ")]
         public async Task<IActionResult> Put(int id, [FromBody] Medico medico)
         {
-            var _medico = await _context.Medicos.FirstOrDefaultAsync(x => x.ID == id);
+            var _medico = await _context.Medicos.FirstOrDefaultAsync(x => x.Id   == id);
 
             if (_medico == null)
                 return NotFound();
@@ -61,7 +61,7 @@ namespace Clinica.API.Controllers
         [HttpDelete("Deletar Registro")]
         public IActionResult Delete(int id)
         {
-            var _medico = _context.Medicos.FirstOrDefault(x => x.ID == id);
+            var _medico = _context.Medicos.FirstOrDefault(x => x.Id == id);
 
             if (_medico == null)
                 return NotFound();

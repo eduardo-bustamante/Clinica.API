@@ -22,18 +22,14 @@ namespace Clinica.API.Data
                .ToTable("Medicos");
 
             modelBuilder.Entity<Medico>()
-               .HasKey(x => x.ID);
+               .HasKey(x => x.Id);
 
             modelBuilder.Entity<Medico>()
                .Property(x => x.Nome)
                    .HasColumnType("varchar(150)")
                    .IsRequired();
 
-            modelBuilder.Entity<Medico>()
-                .Property(x => x.Crm)
-                    .HasColumnType("varchar(10)")
-                    .IsRequired();
-
+         
         }
 
     }

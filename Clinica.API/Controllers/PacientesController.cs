@@ -26,7 +26,7 @@ namespace Clinica.API.Controllers
         [HttpGet("Buscar Paciente")]
         public async Task<IActionResult> Get(int id)
         {
-            var pacientes = await _context.Pacientes.FirstOrDefaultAsync(x => x.ID == id);
+            var pacientes = await _context.Pacientes.FirstOrDefaultAsync(x => x.Id == id);
             return Ok(pacientes);
         }
 
@@ -42,7 +42,7 @@ namespace Clinica.API.Controllers
         [HttpPut("Editar Registro")]
         public async Task<IActionResult> Put(int id, [FromBody] Paciente paciente)
         {
-            var _paciente = await _context.Pacientes.FirstOrDefaultAsync(x => x.ID == id);
+            var _paciente = await _context.Pacientes.FirstOrDefaultAsync(x => x.Id == id);
 
             if (_paciente == null)
                 return NotFound();
@@ -52,14 +52,8 @@ namespace Clinica.API.Controllers
             _paciente.Email = paciente.Email;
             _paciente.DataNascimento = paciente.DataNascimento;
             _paciente.Sexo = paciente.Sexo;
-            _paciente.DataObito = paciente.DataObito;
-            _paciente.DataUltimaConsulta = paciente.DataUltimaConsulta;
-            _paciente.Ativo = paciente.EstaAtivo();
 
-
-
-
-            await _context.SaveChangesAsync();
+                        await _context.SaveChangesAsync();
 
             return Ok(paciente);
         }
@@ -68,7 +62,7 @@ namespace Clinica.API.Controllers
         [HttpDelete("Deletar Registro")]
         public IActionResult Delete(int id)
         {
-            var _paciente = _context.Pacientes.FirstOrDefault(x => x.ID == id);
+            var _paciente = _context.Pacientes.FirstOrDefault(x => x.Id == id);
 
             if (_paciente == null)
                 return NotFound();
