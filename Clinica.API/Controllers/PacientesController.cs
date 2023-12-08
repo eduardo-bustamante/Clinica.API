@@ -7,7 +7,7 @@ namespace Clinica.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class PacientesController : Controller
+    public class PacientesController : ControllerBase
     {
         private readonly DataContext _context;
 

@@ -18,18 +18,8 @@ namespace Clinica.API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Medico>()
-               .ToTable("Medicos");
-
-            modelBuilder.Entity<Medico>()
-               .HasKey(x => x.Id);
-
-            modelBuilder.Entity<Medico>()
-               .Property(x => x.Nome)
-                   .HasColumnType("varchar(150)")
-                   .IsRequired();
-
-         
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
         }
 
     }
