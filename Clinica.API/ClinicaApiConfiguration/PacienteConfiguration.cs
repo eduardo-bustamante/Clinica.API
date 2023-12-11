@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Clinica.API.Map
 {
-    public class PacienteMap : EntidadeMaps<Paciente>
+    public class PacienteMap : EntidadeConfiguration<Paciente>
     {
         public PacienteMap() : base("tb_paciente")
         { }

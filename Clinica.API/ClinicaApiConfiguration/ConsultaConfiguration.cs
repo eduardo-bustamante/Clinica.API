@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Clinica.API.Map
 {
-    public class ConsultaMap : EntidadeMaps<Consulta>
+    public class ConsultaConfiguration : EntidadeConfiguration<Consulta>
     {
-        public ConsultaMap() : base("tb_consulta")
+        public ConsultaConfiguration() : base("tb_consulta")
         {
         }
 

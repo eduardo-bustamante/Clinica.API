@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Clinica.API.Map
 {
-    public class MedicoMap : EntidadeMaps<Medico>
+    public class MedicoConfiguration : EntidadeConfiguration<Medico>
     {
-        public MedicoMap() : base("tb_medico") { }
+        public MedicoConfiguration() : base("tb_medico") { }
 
         public override void Configure(EntityTypeBuilder<Medico> builder)
         {
